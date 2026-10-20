@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TEXTO | Mis Enlaces</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Font Awesome para Iconos -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts: Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background: linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #0f172a 100%);
+            min-height: 100vh;
+        }
+
+        /* Animación suave de elevación y pulso al pasar el cursor */
+        .link-card {
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            backdrop-filter: blur(12px);
+        }
+
+        .link-card:hover {
+            transform: translateY(-4px) scale(1.01);
+            box-shadow: 0 12px 24px -10px rgba(255, 255, 255, 0.15);
+        }
+
+        .link-card:active {
+            transform: translateY(-1px) scale(0.99);
+        }
+
+        /* Efecto sutil de destello en el borde */
+        .glow-effect {
+            position: relative;
+        }
+        .glow-effect::before {
+            content: '';
+            position: absolute;
+            inset: -1px;
+            background: linear-gradient(45deg, rgba(255,255,255,0.1), rgba(255,255,255,0.3), rgba(255,255,255,0.1));
+            border-radius: 1rem;
+            z-index: -1;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+        .glow-effect:hover::before {
+            opacity: 1;
+        }
+    </style>
+</head>
+<body class="text-slate-100 flex flex-col items-center justify-between p-4 sm:p-6 min-h-screen">
+
+    <!-- Sub-contenedor principal adaptado para pantallas móviles y desktop -->
+    <main class="w-full max-w-md mx-auto flex-1 flex flex-col items-center justify-center py-8">
+        
+        <!-- ========================================== -->
+        <!-- SECCIÓN 1: SECCIÓN DE PERFIL / CABECERA   -->
+        <!-- ========================================== -->
+        <header class="flex flex-col items-center text-center mb-8 w-full">
+            <!-- Avatar / Foto de perfil -->
+            <div class="relative group mb-4">
+                <div class="w-28 h-28 sm:w-32 sm:h-32 rounded-full overflow-hidden border-2 border-slate-700/80 shadow-2xl p-1 bg-slate-800/50 backdrop-blur-md">
+                    <!-- Cambia 'src' por el link de tu propia foto o logo -->
+                    <img 
+                        src="https://placehold.co/200x200/1e293b/ffffff?text=LOGO" 
+                        alt="Foto de Perfil" 
+                        class="w-full h-full object-cover rounded-full group-hover:scale-105 transition-transform duration-300"
+                        onerror="this.src='https://placehold.co/200x200/1e293b/ffffff?text=LOGO'"
+                    />
+                </div>
+                <!-- Indicador de estado (opcional) -->
+                <span class="absolute bottom-1 right-1 bg-emerald-500 border-2 border-slate-900 w-5 h-5 rounded-full" title="Disponible"></span>
+            </div>
+
+            <!-- Nombre de usuario / Título principal -->
+            <!-- EDITA AQUÍ TU NOMBRE/MARCA -->
+            <h1 class="text-2xl sm:text-3xl font-bold tracking-tight text-white mb-1">
+                @TEXTO
+            </h1>
+
+            <!-- Descripción o Biografía corta -->
+            <!-- EDITA AQUÍ TU SUBTÍTULO O DESCRIPCIÓN -->
+            <p class="text-slate-400 text-sm sm:text-base font-light max-w-xs px-2">
+                TEXTO
+            </p>
+        </header>
+
+        <!-- ========================================== -->
+        <!-- SECCIÓN 2: LISTA DE ENLACES / BOTONES      -->
+        <!-- ========================================== -->
+        <section class="w-full space-y-4 px-2">
+            
+            <!-- BOTÓN 1: EDITA EL ENLACE Y EL TEXTO -->
+            <a href="#" target="_blank" rel="noopener noreferrer" class="glow-effect link-card group flex items-center justify-between w-full p-4 bg-slate-800/60 hover:bg-slate-800/90 border border-slate-700/60 rounded-2xl shadow-lg">
+                <!-- Icono a la izquierda -->
+                <div class="w-10 h-10 rounded-xl bg-emerald-500/10 text-emerald-400 flex items-center justify-center text-xl group-hover:bg-emerald-500 group-hover:text-slate-950 transition-colors duration-300">
+                    <i class="fa-brands fa-whatsapp"></i>
+                </div>
+                
+                <!-- Texto del Botón (Centrado) -->
+                <span class="font-semibold text-slate-200 group-hover:text-white text-base sm:text-lg tracking-wide text-center flex-1 mx-3">
+                    TEXTO
+                </span>
+
+                <!-- Flecha o icono indicativo a la derecha -->
+                <div class="w-8 text-slate-500 group-hover:text-slate-300 text-right group-hover:translate-x-1 transition-transform duration-300">
+                    <i class="fa-solid fa-chevron-right text-sm"></i>
+                </div>
+            </a>
+
+            <!-- BOTÓN 2: EDITA EL ENLACE Y EL TEXTO -->
+            <a href="#" target="_blank" rel="noopener noreferrer" class="glow-effect link-card group flex items-center justify-between w-full p-4 bg-slate-800/60 hover:bg-slate-800/90 border border-slate-700/60 rounded-2xl shadow-lg">
+                <!-- Icono a la izquierda -->
+                <div class="w-10 h-10 rounded-xl bg-indigo-500/10 text-indigo-400 flex items-center justify-center text-xl group-hover:bg-indigo-500 group-hover:text-slate-950 transition-colors duration-300">
+                    <i class="fa-solid fa-book-open"></i>
+                </div>
+                
+                <!-- Texto del Botón (Centrado) -->
+                <span class="font-semibold text-slate-200 group-hover:text-white text-base sm:text-lg tracking-wide text-center flex-1 mx-3">
+                    TEXTO
+                </span>
+
+                <!-- Flecha o icono indicativo a la derecha -->
+                <div class="w-8 text-slate-500 group-hover:text-slate-300 text-right group-hover:translate-x-1 transition-transform duration-300">
+                    <i class="fa-solid fa-chevron-right text-sm"></i>
+                </div>
+            </a>
+
+            <!-- BOTÓN 3: EDITA EL ENLACE Y EL TEXTO -->
+            <a href="#" target="_blank" rel="noopener noreferrer" class="glow-effect link-card group flex items-center justify-between w-full p-4 bg-slate-800/60 hover:bg-slate-800/90 border border-slate-700/60 rounded-2xl shadow-lg">
+                <!-- Icono a la izquierda -->
+                <div class="w-10 h-10 rounded-xl bg-purple-500/10 text-purple-400 flex items-center justify-center text-xl group-hover:bg-purple-500 group-hover:text-slate-950 transition-colors duration-300">
+                    <i class="fa-solid fa-bag-shopping"></i>
+                </div>
+                
+                <!-- Texto del Botón (Centrado) -->
+                <span class="font-semibold text-slate-200 group-hover:text-white text-base sm:text-lg tracking-wide text-center flex-1 mx-3">
+                    TEXTO
+                </span>
+
+                <!-- Flecha o icono indicativo a la derecha -->
+                <div class="w-8 text-slate-500 group-hover:text-slate-300 text-right group-hover:translate-x-1 transition-transform duration-300">
+                    <i class="fa-solid fa-chevron-right text-sm"></i>
+                </div>
+            </a>
+
+        </section>
+
+        <!-- ========================================== -->
+        <!-- SECCIÓN 3: REDES SOCIALES INFERIORES       -->
+        <!-- ========================================== -->
+        <footer class="mt-10 flex items-center justify-center space-x-6 text-slate-400">
+            <a href="#" target="_blank" rel="noopener noreferrer" class="hover:text-pink-400 text-xl transition-colors duration-300 p-2" title="Instagram">
+                <i class="fa-brands fa-instagram"></i>
+            </a>
+            <a href="#" target="_blank" rel="noopener noreferrer" class="hover:text-blue-400 text-xl transition-colors duration-300 p-2" title="Facebook">
+                <i class="fa-brands fa-facebook"></i>
+            </a>
+            <a href="#" target="_blank" rel="noopener noreferrer" class="hover:text-sky-400 text-xl transition-colors duration-300 p-2" title="Twitter / X">
+                <i class="fa-brands fa-x-twitter"></i>
+            </a>
+        </footer>
+
+    </main>
+
+    <!-- CRÉDITOS O FOOTER INFERIOR -->
+    <div class="text-center text-xs text-slate-500 pb-2">
+        <p>© 2026 TEXTO. Todos los derechos reservados.</p>
+    </div>
+
+</body>
+</html>
